@@ -1,0 +1,4 @@
+lister les processus en cours qui portent le nom de pharo puis le tuer
+ps -fux | grep pharo
+kill ID_NUMBER
+

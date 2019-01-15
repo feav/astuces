@@ -13,3 +13,18 @@ mysql> exit
 Bye
 feav@embolo:~$ sudo service mysql restart
 
+Simply change or reset your MySQL root password by doing the following:
+Stop the MySQL server
+sudo service mysql stop
+Start mysqld
+sudo mysqld --skip-grant-tables &
+Login to MySQL as root
+mysql -u root mysql
+Change MYSECRET with your new root password
+UPDATE user SET Password=PASSWORD('MYSECRET') WHERE User='root'; FLUSH PRIVILEGES; exit;
+Kill mysqld
+sudo pkill mysqld
+Start mysql
+sudo service mysql start
+Login to phpmyadmin as root with your new password
+
